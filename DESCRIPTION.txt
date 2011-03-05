@@ -1,0 +1,160 @@
+== ANNOUNCEMENTS ==
+
+  ** THIS IS A BETA PRODUCT **
+
+  PLEASE TO NOT COMMENT OR RATE ON THIS PAGE UNTIL IT COMES OUT OF BETA.
+
+  SEND ALL FEEDBACK TO ansel@anselsantosa.com
+
+
+== WHAT DOES IT DO? ==
+
+  It is a personalized solution for those who are tired of useless and distracting elements in the Google Reader interface.
+  It removes as much or as little as you want. It also adds functionality if you so choose.
+  Look around the options page to see what it does first hand. Link below.
+
+
+== OPTIONS ==
+
+  The Options page is easy to use and interactive features:
+  * Screenshots when you mouseover options so you know what you're changing
+  * Organized tabbed navigation
+  * See it in action here: [http://www.anselsantosa.com/sites/MinimalistGoogleReader/options.html]
+
+  The following elements can be modified individually:
+ == GENERAL
+  * Hide Minimalist for Google Reader options icon
+  * Show favicon counter
+  * Show transition animations
+  * Rounded corners on input fields and textareas
+  * Custom CSS input
+ == THEME
+  * Customize background color
+  * Customize border color
+  * Customize link color
+  * Customize current item highlight
+  * Customize button colors
+ == GOOGLE BAR
+  * Hide Google bar [click to toggle when hidden]
+  * Make Google bar invisible until hover
+  * Hide background & border
+  * Hide Google links
+  * Replace Google links with custom menu
+  * Hide logged in
+  * Hide Labs icon
+  * Hide Settings link
+  * Hide Help link
+  * Hide Sign out link
+ == HEADER
+  * Hide header [click to toggle when hidden]
+  * Hide logo
+  * Use custom logo
+  * Hide all search
+  * Hide search filter dropdown
+  * Hide search button
+ == MAIN
+  * Hide title bar
+  * Hide expanded/list options
+  * Hide toolbar
+  * Hide new/all options
+  * Hide Mark all as read button
+  * Hide Refresh button
+  * Hide view settings
+  * Hide viewer footer
+  * Hide Home sidebar
+  * Hide Home tips
+  * Hide break-out icon
+  * Hide item footer
+  * Hide footer text
+  * Hide Add star
+  * Hide Like
+  * Hide Share
+  * Hide Share with note
+  * Hide Email
+  * Hide Keep unread
+  * Hide Edit tags
+ == NAVIGATION
+  * Hide Add a subscription button
+  * Hide navigation
+  * Custom nav width
+  * Hide Home section
+  * Hide icons
+  * Hide All items link
+  * Hide Starred items link
+  * Hide Your stuff section
+  * Hide Shared items
+  * Hide Notes
+  * Hide Trends
+  * Hide Browse
+  * Hide People you follow section
+  * Hide new comments icon
+  * Hide Sharing settings link
+  * Hide Explore section
+  * Hide Manage subscriptions
+ == MORE?
+  * Leave feature suggestions in the Issue Tracker: [http://code.google.com/p/minimalist-google-reader/issues]
+
+
+== HOW DO I WORK IT? ==
+
+  All the instructions you need are on the support page:
+  [http://code.google.com/p/minimalist-google-reader/wiki/Support]
+
+
+== ISSUES TRACKING ==
+
+  I test as thoroughly as I can before each release, but bugs are bound to get through.
+  Read, track, and submit bugs in the Issue Tracker:
+  [http://code.google.com/p/minimalist-google-reader/issues]
+
+
+== QUESTION? ==
+
+  * Ping me on Twitter: @anstosa
+  * Email me: ansel@anselsantosa.com
+
+
+== COMING SOON ==
+
+  Want to recommend a feature? Submit it in the Issues Tracker:
+  [http://code.google.com/p/minimalist-google-reader/issues/list]
+
+
+== PERMISSIONS ==
+
+  Learn more about Chrome Extension permissions here: http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=186213
+  If you look as the permissions required by similar extensions in the Web Store, you will see that they are exactly the same
+  so before you make assumptions based on two short and broad statements, please read the following:
+
+ == "tabs"
+  * This permissions results in the "This extensions can access your browsing history" warning.
+  * I *NEVER* access your browsing history.
+  * I need this permission to open tabs. I use this to open the options page on major updates.
+  * This permission is also used to refresh the Google Calendar tab when you save your settings.
+ == "http://*google.com/reader/*", "https://*google.com/reader/*"
+  * This permission results in the "This extension can access your data on google.com/calendar" warning.
+  * I *NEVER* access, read, store, or transmit your personal data.
+  * I need this permission to run user scripts behind specific pages in the browser.
+  * These scripts inject Javascript and CSS into Gmail to enhance functionality and hide elements
+
+  Still don't trust me? Go to [https://github.com/anstosa/Minimalist-Google-Reader] to see the entire source code.
+
+
+== CHANGELOG ==
+
+ == 0.5.0
+  * First!
+
+
+== CREDITS ==
+
+  Most of Minimalist for Google Reader is written from the ground-up but some things are just perfect already:
+  * favicon unread counter by Peter Wooley 
+  Full details on the About page: [http://www.anselsantosa.com/sites/MinimalistGoogleReader/options.html#abo] 
+
+
+== LEGAL ==
+
+  I am not a Google Employee or officially affiliated with Google in any way. This extension is not endorsed by Google.
+  Google, Google Reader, and the Google Reader logo are trademarks of Google Inc.
+  Use of these trademarks is subject to Google Permissions.

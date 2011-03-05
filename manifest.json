@@ -1,0 +1,32 @@
+{
+	"name": "Minimalist for Google Reader™",
+	"version": "0.5.0",
+	"description": "Individually hide almost 50 interface elements and add custom logos, and more...",
+	"icons": {
+         "16": "img/icons/icon16.png",
+		 "48": "img/icons/icon48.png",
+		"128": "img/icons/icon128.png" },
+	"page_action": {
+		"default_icon": "img/icons/icon19.png",
+		"default_title": "Minimalist for Google Reader Options",
+		"default_popup": "popup.html"
+	},
+	"background_page": "background.html",
+	"content_scripts": [ {
+		"matches": [ "http://www.google.com/reader/*", "https://www.google.com/reader/*" ],
+		"js": [ "js/stylesheet.js" , "js/active.js", "js/favicon.js" ],
+		"run_at": "document_end",
+		"all_frames": true
+	}, {
+		"matches": [ "http://www.google.com/voice/*", "https://www.google.com/voice/*" ],
+		"js": [ "js/voice.js" ],
+		"all_frames": true
+	} ],
+	"converted_from_user_script": true,
+	"options_page": "options.html",	
+	"permissions": [
+		"tabs",
+		"http://www.google.com/reader/*",
+		"https://www.google.com/reader/*"
+	]
+}
