@@ -20,6 +20,7 @@ $(function(){
 		// GENERAL
 			$("#mricon").attr('checked', o.mricon);
 			$("#favicon").attr('checked', o.favicon);
+			$("#v").attr('checked', o.v);
 			$("#trans").attr('checked', o.trans);
 			$("#corners").attr('checked', o.corners);
 			$("#customCSS").attr('checked', o.customCSS);
@@ -128,6 +129,11 @@ $(function(){
 			$("#footer").attr('checked', o.footer);
 			$("#h_side").attr('checked', o.h_side);
 			$("#h_tips").attr('checked', o.h_tips);
+			$("#h_blog").attr('checked', o.h_blog);
+			$("#h_footer").attr('checked', o.h_footer);
+			if ((o.itemW != null) && (o.itemW != ""))
+				$("#itemW").val(o.itemW);
+			else $("#itemW").val("650");
 			$("#i_break").attr('checked', o.i_break);
 			$("#i_footer").attr('checked', o.i_footer);
 			$("#i_text").attr('checked', o.i_text);
@@ -142,6 +148,7 @@ $(function(){
 			$("#nav").attr('checked', o.nav);
 			$("#navA").attr('checked', o.navA);
 			$("#n_icons").attr('checked', o.n_icons);
+			$("#n_dim").attr('checked', o.n_dim);
 			$("#n_manage").attr('checked', o.n_manage);
 			if ((o.navW != null) && (o.navW != ""))
 				$("#navW").val(o.navW);
@@ -167,6 +174,7 @@ $(function(){
 		localStorage['options'] = JSON.stringify({
 			// GENERAL
 				"mricon":$("#mricon").attr('checked'),
+				"v":$("#v").attr('checked'),
 				"favicon":$("#favicon").attr('checked'),
 				"trans":$("#trans").attr('checked'),
 				"corners":$("#corners").attr('checked'),
@@ -232,6 +240,9 @@ $(function(){
 				"footer":$("#footer").attr('checked'),
 				"h_side":$("#h_side").attr('checked'),
 				"h_tips":$("#h_tips").attr('checked'),
+				"h_blog":$("#h_blog").attr('checked'),
+				"h_footer":$("#h_footer").attr('checked'),
+				"itemW":$("#itemW").val(),
 				"i_break":$("#i_break").attr('checked'),
 				"i_footer":$("#i_footer").attr('checked'),
 				"i_text":$("#i_text").attr('checked'),
@@ -247,8 +258,8 @@ $(function(){
 				"navW":$("#navW").val(),
 				"navA":$("#navA").attr('checked'),
 				"n_icons":$("#n_icons").attr('checked'),
+				"n_dim":$("#n_dim").attr('checked'),
 				"n_manage":$("#n_manage").attr('checked'),
-				"navW":$("#navW").val(),
 				"n_home":$("#n_home").attr('checked'),
 				"n_all":$("#n_all").attr('checked'),
 				"n_star":$("#n_star").attr('checked'),
@@ -297,7 +308,7 @@ $(function(){
 	imagePreview = function(){
 			xOffset = -25;
 			yOffset = -100;
-		$("label").hover(function(e){
+		$("label:not([hide])").hover(function(e){
 			this.t = this.title;
 			this.title = "";
 			var c = (this.t != "") ? "<br /><span>" + this.t : "" + "</span>";

@@ -2,7 +2,7 @@
 <head>
 	<script>
 		// ---- CHECK UPDATE ----//
-		var major = 1;
+		var major = 2;
 		var minor = 1;
 		if (localStorage["major"] == undefined) {
 			localStorage["major"] = 0;
@@ -55,6 +55,9 @@
 			}
 			if (request.action == "reload") reloadTab();
 			if (request.action == "toggle") joy ? joy = false : joy = true;
+			if (request.url){
+				chrome.tabs.create({"url":request.url, "selected":false});
+			}
 		});
 		//---- END TALK TO SCRIPTS ----//
 

@@ -1,10 +1,7 @@
 == ANNOUNCEMENTS ==
 
-  ** THIS IS A BETA PRODUCT **
-
-  PLEASE TO NOT COMMENT OR RATE ON THIS PAGE UNTIL IT COMES OUT OF BETA.
-
-  SEND ALL FEEDBACK TO ansel@anselsantosa.com
+  Well it's relatively stable, still not as full featured as I'd like but the word got out a bit faster than I expected
+  Consider it tentatively out of beta.
 
 
 == WHAT DOES IT DO? ==
@@ -25,6 +22,7 @@
  == GENERAL
   * Hide Minimalist for Google Reader options icon
   * Show favicon counter
+  * Open items in background with [ v ]
   * Show transition animations
   * Rounded corners on input fields and textareas
   * Custom CSS input
@@ -63,6 +61,9 @@
   * Hide viewer footer
   * Hide Home sidebar
   * Hide Home tips
+  * Hide Home Reader Blog
+  * Hide Home Footer
+  * Custom item body width
   * Hide break-out icon
   * Hide item footer
   * Hide footer text
@@ -79,6 +80,7 @@
   * Custom nav width
   * Hide Home section
   * Hide icons
+  * Dim icons
   * Hide All items link
   * Hide Starred items link
   * Hide Your stuff section
@@ -117,7 +119,7 @@
 == COMING SOON ==
 
   Want to recommend a feature? Submit it in the Issues Tracker:
-  [http://code.google.com/p/minimalist-google-reader/issues/list]
+  [http://code.google.com/p/minimalist-google-reader/issues]
 
 
 == PERMISSIONS ==
@@ -131,6 +133,10 @@
   * I *NEVER* access your browsing history.
   * I need this permission to open tabs. I use this to open the options page on major updates.
   * This permission is also used to refresh the Google Calendar tab when you save your settings.
+ == "bookmarks"
+  * This permission results in the "This item can access your bookmars" warning.
+  * I *NEVER* access, read, modify, store, or transmit any of bookmarks.
+  * I need this permission to create a bookmark that is used to sync settings accross computers.
  == "http://*google.com/reader/*", "https://*google.com/reader/*"
   * This permission results in the "This extension can access your data on google.com/calendar" warning.
   * I *NEVER* access, read, store, or transmit your personal data.
@@ -142,7 +148,22 @@
 
 == CHANGELOG ==
 
- == 0.5.0
+ == 0.5.2 [8 MAR]
+  * Fixed: Mangage and sharing settings links not hiding.
+  * Fixed: Item footer not hiding in list view
+  * Fixed: Top item in list view not clickable
+ == 0.5.1 [5 MAR]
+  * Added: Hide Home Reader Blog
+  * Added: Hide Home Footer
+  * Added: [ v ] opens items in background tabs
+  * Added: Custom item body width
+  * Added: Dim icons until mouseover
+  * Improved: Opening links in background doesn't flash the page
+  * Fixed: Menu dropdown icon hidden in subscriptions
+  * Fixed: Broken links in options
+  * Fixed: Break-out icon not hiding
+  * Fixed: Broken hover images in options
+ == 0.5.0 [4 MAR]
   * First!
 
 

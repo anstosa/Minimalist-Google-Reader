@@ -16,6 +16,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	css += "#gbar, #guser { height: 20px; padding-bottom: 0 !important; }\n";
 	css += ".subscribe-button { padding-left: 0 !important; background: none; }\n";	
 	
+	/*css += "#nav { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAK8CAMAAAD/Ke59AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAE5QTFRFHx8fMzMzMjIyNjY2MTExMDAwLi4uLy8vLS0tNTU1NDQ0Hh4eKysrHR0dLCwsKioqKCgoKSkpICAgJSUlJiYmJycnJCQkISEhIyMjIiIiHhf88QAAAR9JREFUeNrs1NtuwyAMBmCS5tSWcgiHwPu/6LwsEm2BhATSadJuflnflYWN0eVCKSJkHJFSVYUeD87Rv51s9Y9dr87qMw3jFOO+8W1jLGi3235rmrDdX0xKsPsZVlWFrH0ySmdrC1hdpxpEAev7b1O+qbA1TaZxOk2e8ah1IesWa31rd5sQYAjFTfmmPOt7Z8NQyBhzJmWydd26EfI5G4aQQSyG8YYpdchIyMhe0xqu6DgKkWUYZ5qUUYPLsBjEm1H6+wY/ajbOU0z7phcTopgx5gy2c8UgnE3TixlTwpRaN5j0umlhrWf6kEmZYMZsGrzkToNIMCEyzZioQVfZpkOmS5i1YNYeNKiiZkyCzV2FzIbMJttcnWDWtz8SXwIMAM8UwWqEpG2GAAAAAElFTkSuQmCC) repeat-x #222 !important;}"
+		+ "#nav [class*='link'], #nav [id*='link'], #nav [class*='lk'], #nav [id*='lk'] { color: #fff !important; }"
+		+ ".scroll-tree li, .lhn-section  { background: transparent !important; background-color: transparent !important; }"
+		+ "#sub-tree::-webkit-scrollbar { width: 0px; }";*/
+
 	// GENERAL
 		if (response.o.trans)
 			css += "* { -webkit-transition-property: background-color, border-color, color, opacity, width, top; -webkit-transition-duration: .15s; -webkit-transition-timing-function: ease-out; }\n";
@@ -25,11 +30,12 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "body, .scroll-tree li, .lhn-section, #entries .entry { background: " + response.o.backCLR + " !important;  background-color: " + response.o.backCLR + " !important; }\n";
 		}
 		if (response.o.borders) {
-			css += "#chrome-header, #chrome-view-links, #chrome-lhn-toggle:hover, #lhn-selectors .selected, #lhn-selectors .selected:hover, .scroll-tree li .tree-link-selected, .scroll-tree li .tree-link-selected:hover  { background: " + response.o.borderCLR + " !important; background-color: " + response.o.borderCLR + " !important; }\n";
-			css += "#viewer-footer, #viewer-header, #chrome-lhn-toggle, .selector:not(.selected):hover, a.link:hover, a.link:hover div:last-child { background: " + lighten(lighten(response.o.borderCLR)) + " !important; background-color: " + lighten(lighten(response.o.borderCLR)) + " !important; }\n";
+			css += "#chrome-header, #chrome-view-links, #chrome-lhn-toggle:hover, #lhn-selectors .selected, #lhn-selectors .selected:hover, .scroll-tree li .tree-link-selected, .scroll-tree li .tree-link-selected:hover, .scroll-tree li a.tree-link-selected .tree-item-action-container { background: " + response.o.borderCLR + " !important; background-color: " + response.o.borderCLR + " !important; }\n";
+			css += "#viewer-footer, #viewer-header, #chrome-lhn-toggle, .selector:not(.selected):hover, a.link:hover { background: " + lighten(lighten(response.o.borderCLR)) + " !important; background-color: " + lighten(lighten(response.o.borderCLR)) + " !important; }\n";
+			css += "a.link:hover div:last-child { background-color: " + lighten(lighten(response.o.borderCLR)) + "; }\n";
 			css += "#viewer-container { background: " + lighten(lighten(lighten(response.o.borderCLR))) + " !important; background-color: " + lighten(lighten(lighten(response.o.borderCLR))) + " !important; }\n";
 			css += ".selected > a.link:hover { background: transparent !important; background-color: transparent !important; }\n";
-			css += "#current-entry .card, #viewer-footer, #viewer-top-controls, #chrome, .lhn-section, .gbh, .gbd { border-color: " + response.o.borderCLR + " !important; }\n";
+			css += "#current-entry .card, #viewer-footer, #viewer-top-controls, #chrome, .lhn-section, .gbh, .gbd, #entries.list #current-entry .collapsed, #entries.list #current-entry.expanded, #entries.list #current-entry.expanded .entry-actions { border-color: " + response.o.borderCLR + " }\n";
 			css += "#chrome-lhn-toggle-icon { display: none; }\n";
 		}
 		if (response.o.BTN) {
@@ -65,6 +71,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	// HEADER
 		if (response.o.header || response.o.gbarH) {
 			css += "[min ~= 'hideH'], [min ~= 'hideH'] *, [min ~= 'hideG'], [min ~= 'hideG'] * { opacity: 0; margin: 0 !important; padding: 0 !important; height: 0 !important; }\n";
+			css += "[min ~= 'hideH'] *, [min ~= 'hideG'] * { display: none; }\n";
 		}
 		if (response.o.header) {
 			//css += "[min ~= 'hideH'] #ntowner { margin-top: -20px !importnat; opacity: 1 !important; }\n";
@@ -111,29 +118,37 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#right-section { display: none; }\n";
 		if (response.o.h_tips)
 			css += "#tips { display: none; }\n";
+		if (response.o.h_blog)
+			css += "#team-messages { display: none; }\n";
+		if (response.o.h_footer) {
+			css += "#overview-footer { display: none; }\n";
+			css += "#sections { border: 0 !important; border-color: transparent !important; }\n";
+		}
+		if ((response.o.itemW != 0) && (response.o.itemW != 650))
+			css += ".entry .entry-body, .entry .entry-title, .entry .entry-likers { max-width: " + response.o.itemW + "px !important; }\n";
 		if (response.o.i_break)
-			css += ".entry-title-go-to { display: none; }\n";
+			css += ".entry-title-go-to { background: none !important; }\n";
 		if (response.o.i_footer)
-			css += ".card-actions.card-bottom { display: none; }\n";
+			css += ".entry-actions { display: none; }\n";
 		if (response.o.i_text) {
-			css += ".entry-actions span, .entry-actions span span { display: inline-block !important; width: 16px !important; margin: 0 5px 0 0 !important; padding: 0 !important; color: transparent !important; }\n";
+			css += ".entry-actions span, .entry-actions span span { display: inline-block; width: 16px !important; margin: 0 5px 0 0 !important; padding: 0 !important; color: transparent !important; }\n";
 			css += ".action-area { margin-top: -4px !important; }\n";
 			css += ".entry-actions span:nth-of-type(7) { display: none !important; }\n";
 		}
 		if (response.o.i_star)
-			css += ".star { display: none; }\n";
+			css += ".star { display: none !important; }\n";
 		if (response.o.i_like)
-			css += ".like { display: none; }\n";
+			css += ".like { display: none !important; }\n";
 		if (response.o.i_share)
-			css += ".broadcast { display: none; }\n";
+			css += ".broadcast { display: none !important; }\n";
 		if (response.o.i_note)
-			css += ".broadcast-with-note { display: none; }\n";
+			css += ".broadcast-with-note { display: none !important; }\n";
 		if (response.o.i_email)
-			css += ".email { display: none; }\n";
+			css += ".email { display: none !important; }\n";
 		if (response.o.i_unread)
-			css += ".read-state-unread { display: none; }\n";
+			css += ".read-state { display: none !important; }\n";
 		if (response.o.i_tags)
-			css += ".tag { display: none; }\n";
+			css += ".tag { display: none !important; }\n";
 	// NAVIGATION
 		if (response.o.nav) {
 			css += "#navToggle { z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; cursor: pointer !important; }\n";
@@ -149,8 +164,12 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += ".selector-icon, .scroll-tree .icon, .scroll-tree .sub-icon, #recommendations-tree .sub-icon { display: none; }\n";
 			css += ".scroll-tree .name { padding-left: 0;}"
 		}
-		if (response.o.n_manage, response.o.n_shareS)
-			css += ".lhn-section-footer, .lhn-section-footer * { visiblity: hidden; height: 0 !important; }\n";
+		if (response.o.n_dim) {
+			css += ".scroll-tree .icon { opacity: .5; }\n";
+			css += ".scroll-tree li:hover > a > .icon { opacity: 1;}"
+		}
+		if (response.o.n_manage || response.o.n_shareS)
+			css += ".lhn-section-footer, .lhn-section-footer * { visibility: hidden !important; height: 0px !important; }\n";
 		if (response.o.n_home)
 			css += "#lhn-selectors { display: none; }\n";
 		if (response.o.n_all)

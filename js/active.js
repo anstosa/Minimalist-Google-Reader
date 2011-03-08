@@ -252,7 +252,7 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 			toggleNav();
 		}
 		// [ v ]
-		if (event.which == 118) {
+		if (response.o.v && event.which == "118") {
 			var x, link;
 			x = document.getElementById('current-entry');
 			if (x == null) {
@@ -262,8 +262,7 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 			link = x[0].getAttribute('href');
 			event.stopPropagation();
 			event.preventDefault();
-			window.open(link)
-			self.focus();
+			chrome.extension.sendRequest({ "url" : link });
 		}
 		return true;
 	}
