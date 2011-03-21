@@ -15,6 +15,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	css += "#chrome[min ~= 'hideN'] { margin-left: 0; }\n";
 	css += "#gbar, #guser { height: 20px; padding-bottom: 0 !important; }\n";
 	css += ".subscribe-button { padding-left: 0 !important; background: none; }\n";	
+	css += "#main, #search, #logo-container { margin-top: 5px !important; }"
 	
 	/*css += "#nav { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAK8CAMAAAD/Ke59AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAE5QTFRFHx8fMzMzMjIyNjY2MTExMDAwLi4uLy8vLS0tNTU1NDQ0Hh4eKysrHR0dLCwsKioqKCgoKSkpICAgJSUlJiYmJycnJCQkISEhIyMjIiIiHhf88QAAAR9JREFUeNrs1NtuwyAMBmCS5tSWcgiHwPu/6LwsEm2BhATSadJuflnflYWN0eVCKSJkHJFSVYUeD87Rv51s9Y9dr87qMw3jFOO+8W1jLGi3235rmrDdX0xKsPsZVlWFrH0ySmdrC1hdpxpEAev7b1O+qbA1TaZxOk2e8ah1IesWa31rd5sQYAjFTfmmPOt7Z8NQyBhzJmWydd26EfI5G4aQQSyG8YYpdchIyMhe0xqu6DgKkWUYZ5qUUYPLsBjEm1H6+wY/ajbOU0z7phcTopgx5gy2c8UgnE3TixlTwpRaN5j0umlhrWf6kEmZYMZsGrzkToNIMCEyzZioQVfZpkOmS5i1YNYeNKiiZkyCzV2FzIbMJttcnWDWtz8SXwIMAM8UwWqEpG2GAAAAAElFTkSuQmCC) repeat-x #222 !important;}"
 		+ "#nav [class*='link'], #nav [id*='link'], #nav [class*='lk'], #nav [id*='lk'] { color: #fff !important; }"
@@ -53,8 +54,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "[class *= 'link'], [id *= 'link'], [class *= 'lk'], [id *= 'lk'], .st-more, .mv-dayname, .dp-sb-cur, .mg-print, .mg-refresh, .ui-dtsr-unselected, .qnb-quickadd, a, a[class *= 'gb'] { color: " + response.o.linkCLR + " !important; }\n";
 	// GOOGLE BAR
 		if (response.o.gbar)
-			css += "#gbar { display: none !important; }\n";
+			css += "#gbar, #gbz { display: none !important; }\n";
 		if (response.o.gbarH) {
+			css += "#gbx1, #gbx2, #gbz, #gbg { top: 10px !important; }\n";
+			css += "#gbx3, #gbx4 { top: 12px !important; }\n";
+			css += "#gbs { top: 42px !important; }\n";
 			css += "#gbarToggle { background-color: rgb(0,0,0,0); height: 10px !important; cursor: pointer !important;}\n";
 			css += "#gbarToggle:hover { background-color: rgba(0,0,0,.5); }\n";
 			css += ".gbh, .gbd { top: 34px; }\n";
@@ -63,11 +67,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#search[min ~= 'hideG'] { top: 75px !important; }\n";
 		}
 		if (response.o.gbarO) {
-			css += "#guser, #gbar { opacity: 0; -webkit-transition-delay: .25s; }\n";
-			css += "#gbar:hover, #guser:hover { opacity: 1; }\n"
+			css += "#gbz, #gbg, #gbx3, #gbx4 ,#guser, #gbar { opacity: 0; -webkit-transition-delay: .25s; }\n";
+			css += "#gb:hover #gbz, #gb:hover #gbg, #gb:hover #gbx3, #gb:hover #gb:hover #gbx4, #gbar:hover, #guser:hover { opacity: 1 !important; }\n"
 		}
 		if (response.o.gbarB)
-			css += ".gbh, .gbd { border: 0 !important; }\n";
+			css += ".gbh, .gbd, #gbx3, #gbx4 { background-image: none !important; background-color: rgba(255,255,255,0) !important; border: 0 !important; }\n";
 	// HEADER
 		if (response.o.header || response.o.gbarH) {
 			css += "[min ~= 'hideH'], [min ~= 'hideH'] *, [min ~= 'hideG'], [min ~= 'hideG'] * { opacity: 0; margin: 0 !important; padding: 0 !important; height: 0 !important; }\n";
