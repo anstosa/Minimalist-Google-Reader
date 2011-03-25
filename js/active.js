@@ -344,7 +344,7 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 			toggleHeader();
 		}
 		// [ \ ]
-		if ((response.o.header || response.o.gbarH) && event.which == "92" && !event.ctrlKey && !event.metaKey) {
+		if ((response.o.header || response.o.gbarH) && (event.which == "92" || (event.which == "102" && (!hiddenG || !hiddenH))) && !event.ctrlKey && !event.metaKey) {
 			toggleHeader();
 		}
 		// [ ` ] tilde key

@@ -148,6 +148,8 @@
 
 == CHANGELOG ==
 
+ == 0.5.6 [24 MAR]
+  * Fixed: Header and Google bar toggle off automatically in full-screen mode
  == 0.5.5 [19 MAR]
   * Fixed: Top margin errors on resize
   * Changed: URL bar icons are smaller and lighter to not be intrusive
