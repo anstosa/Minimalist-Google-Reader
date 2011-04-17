@@ -148,6 +148,10 @@
 
 == CHANGELOG ==
 
+ == 0.5.7 [8 APR]
+  * Fixed: Check for old Google Bar not working
+  * Fixed: Custom settings fields not loading from memory
+  * Fixed: Accent color not applied to expanded item header and footer in list view
  == 0.5.6 [24 MAR]
   * Fixed: Header and Google bar toggle off automatically in full-screen mode
  == 0.5.5 [19 MAR]

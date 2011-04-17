@@ -59,7 +59,7 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 			}, 500);
 		}
 		// go loop go!
-		if (document.querySelectorAll("[id = 'gbar']").length != null && document.querySelectorAll("[title *= 'Mail by Google']").length > 0 && !appsinit) {
+		if (document.querySelectorAll("[id = 'gbar']").length > 0 && !appsinit) {
 			oldGbar = true;
 			appsinit = true;
 		}

@@ -166,6 +166,9 @@ $(function(){
 			$("#n_shareS").attr('checked', o.n_shareS);
 			$("#n_explore").attr('checked', o.n_explore);
 		localStorage["uncheckedUpdate"] = false;
+		$("#EIC_1").val(localStorage["EIC_1"]);
+		$("#EIC_2").val(localStorage["EIC_2"]);
+		$("#EIC_3").val(localStorage["EIC_3"]);
 	}
 	//---- END LOAD ----//
 	
